@@ -11,4 +11,4 @@
 .vscode/
 
 ## Run Code exes
-.exe
+*.exe
