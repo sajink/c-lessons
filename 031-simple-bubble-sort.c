@@ -5,16 +5,9 @@ void printArray(int arr[], int len)
 {
     for(int i=0; i<len;i++) printf("%d - ",arr[i]);
 }
-
-void swap(int *now, int *next)
-{
-    int temp = *now;
-    *now = *next;
-    *next = temp;
-}
  
 void main(){
-    int tosort[100], count;
+    int tosort[100], count, temp;
     
     // Ask user how long is the list
     printf("Enter count of numbers to sort (<100): ");
@@ -30,7 +23,9 @@ void main(){
         for(int j=0;j<count-1-i;j++) {
             printf("\n\tInner Loop: %d", j);
             if(tosort[j]>tosort[j+1]) {
-                swap(&tosort[j],&tosort[j+1]);
+                temp = tosort[j];
+                tosort[j] = tosort[j+1];
+                tosort[j+1] = temp;
             }
         }
         printf("\n\t Result now: ");
