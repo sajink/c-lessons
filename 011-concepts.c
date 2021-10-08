@@ -12,20 +12,16 @@ int passed(int marks) {
 
 // 'main' is is the entry method
 void main() {
+  #ifdef DEBUG
+   printf("\ni am inside main and DEBUG is defined");
+  #endif
+  #ifndef DEBUG
+   printf("\ni am inside main but DEBUG is not defined");
+  #endif
+
   int x=3, y=5; // initialise integers
   int z[3] = {1,5,23}; // initialise an int array of size 3
   int p = x; // initialise int with another variable
-
-  // Arithmetic Operators:   +, -, /, * , %
-
-  // Logical Operators:    > , < , !=, ==, &&, ||, XOR
-
-
-  //x==y -> is 3 equal to 5? -> false
-  printf("\nEquals: %d", x==y);
-
-  // x=y -> can you assign y to x? -> true
-  printf("\nAssigned: %d", x=y);
 
   // Other data type initialisations
   long distance = 123451231;
@@ -33,26 +29,25 @@ void main() {
   char* n = "Sru";
   char name[20] = "1234567890";
 
+  // Arithmetic Operators:   +, -, /, * , %
+  // Logical Operators:    > , < , !=, ==, &&, ||, XOR
+  // Operators and precedence: https://www.tutorialspoint.com/cprogramming/c_operators.htm
+
+  //x==y -> is 3 equal to 5? -> false
+  printf("\nEquals: %d", x==y);
+  // x=y -> can you assign y to x? -> true
+  printf("\nAssigned: %d", x=y);
+
   int result = add(x,y);
-  //result will be 8
+  printf("%d + %d = %d", x, y, result);
 
   int m = 35;
-  
-  #ifdef DEBUG
-   printf("\ni am inside main and DEBUG is defined");
-  #endif
-  #ifndef DEBUG
-   printf("\ni am inside main but DEBUG is not defined");
-  #endif
-  
   // Calling a function and using a simple if with single statements (no braces)
   if(passed(m)) printf("\nPassed");
   else printf("\nFailed");
 
-  // Same thing as above, but with 
+  // Same thing as above, but with ?: conditional operator
   printf(passed(m) ? "\nPassed" : "\nFailed");
-
-  // Operators and precedence: https://www.tutorialspoint.com/cprogramming/c_operators.htm
 }
 
 /*
