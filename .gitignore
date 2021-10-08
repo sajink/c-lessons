@@ -1,0 +1,14 @@
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.userprefs
+
+# Visual Studio 2015/2017 cache/options directory
+.vs/
+.vscode/
+
+## Run Code exes
+.exe
